@@ -32,6 +32,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnAutobuses = new javax.swing.JButton();
         btnPasajeros = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,9 +42,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 255, 51));
         jLabel1.setText("CENTRAL DE AUTOBUSES ");
 
-        btnAutobuses.setBackground(new java.awt.Color(0, 0, 0));
-        btnAutobuses.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnAutobuses.setForeground(new java.awt.Color(0, 255, 255));
+        btnAutobuses.setBackground(new java.awt.Color(255, 255, 204));
+        btnAutobuses.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnAutobuses.setForeground(new java.awt.Color(255, 102, 0));
+        btnAutobuses.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/frente-del-autobus.png"))); // NOI18N
         btnAutobuses.setText("Autobuses");
         btnAutobuses.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +53,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnPasajeros.setBackground(new java.awt.Color(0, 0, 0));
-        btnPasajeros.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnPasajeros.setForeground(new java.awt.Color(0, 255, 255));
+        btnPasajeros.setBackground(new java.awt.Color(255, 255, 204));
+        btnPasajeros.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPasajeros.setForeground(new java.awt.Color(255, 102, 0));
+        btnPasajeros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/conductor (1).png"))); // NOI18N
         btnPasajeros.setText("Pasajeros");
         btnPasajeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,33 +64,43 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/autobus.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(121, 121, 121))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel2)
+                        .addGap(83, 83, 83)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAutobuses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(203, 203, 203))))
+                            .addComponent(btnPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(89, 89, 89)
-                .addComponent(btnAutobuses, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(btnPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(btnAutobuses, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(btnPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAutobuses, btnPasajeros});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,17 +116,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAutobusesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutobusesActionPerformed
-        DatosAutobuses autobus = new DatosAutobuses();
-        autobus.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnAutobusesActionPerformed
-
     private void btnPasajerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasajerosActionPerformed
         DatosPasajeros pasajero = new DatosPasajeros();
         pasajero.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPasajerosActionPerformed
+
+    private void btnAutobusesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutobusesActionPerformed
+        DatosAutobuses autobus = new DatosAutobuses();
+        autobus.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAutobusesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,6 +168,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnAutobuses;
     private javax.swing.JButton btnPasajeros;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
